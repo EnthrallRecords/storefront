@@ -78,7 +78,7 @@ export default defineComponent({
 .skeleton {
   display: inline-block;
   vertical-align: middle;
-  background-color: #f1f2f3;
+  //background-color: #f1f2f3;
   user-select: none;
   width: 100%;
   height: 1em;

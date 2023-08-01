@@ -182,8 +182,8 @@ export default defineComponent({
   &__subcategories {
     position: absolute;
     z-index: 1;
-    background-color: #fff;
-    box-shadow: 0 3px var(--c-primary);
+    background-color: var(--header-background);
+    box-shadow: 0 3px var(--c-primary), 0 -1px var(--c-primary);
     left: 0;
     padding: 30px;
     right: 0;

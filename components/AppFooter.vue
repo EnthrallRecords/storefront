@@ -4,65 +4,52 @@
     multiple
     class="footer"
   >
-    <SfFooterColumn :title="$t('About us')">
+    <SfFooterColumn :title="$t('')">
       <SfList>
-        <SfListItem
-          v-for="item in aboutUs"
-          :key="item"
-        >
+        <SfListItem v-for="link in orders" :key="link.name">
+          <router-link v-if="link.link" :to="link.link" exact>
+            <SfMenuItem class="sf-footer__menu-item" :label="$t(link.name)" />
+          </router-link>
           <SfMenuItem
-            :label="$t(item)"
+            v-else-if="link.clickHandler"
+            class="sf-footer__menu-item"
+            :label="$t(link.name)"
+            @click="link.clickHandler"
           />
         </SfListItem>
       </SfList>
     </SfFooterColumn>
-    <SfFooterColumn :title="$t('Departments')">
+    <SfFooterColumn :title="$t('Info')">
       <SfList>
-        <SfListItem
-          v-for="item in departments"
-          :key="item"
-        >
-          <SfMenuItem
-            :label="$t(item)"
-          />
+        <SfListItem>
+          <a href="https://www.enthrallrecords.com/privacy-policy/">
+            <SfMenuItem
+              class="sf-footer__menu-item"
+              :label="$t('privacy policy')"
+            />
+          </a>
         </SfListItem>
       </SfList>
     </SfFooterColumn>
-    <SfFooterColumn :title="$t('Help')">
-      <SfList>
-        <SfListItem
-          v-for="item in help"
-          :key="item"
-        >
-          <SfMenuItem
-            :label="$t(item)"
-          />
-        </SfListItem>
-      </SfList>
-    </SfFooterColumn>
-    <SfFooterColumn :title="$t('Payment & Delivery')">
-      <SfList>
-        <SfListItem
-          v-for="item in paymentsDelivery"
-          :key="item"
-        >
-          <SfMenuItem
-            :label="$t(item)"
-          />
-        </SfListItem>
-      </SfList>
-    </SfFooterColumn>
-    <SfFooterColumn title="Social">
+    <SfFooterColumn :title="$t('')"></SfFooterColumn>
+    <SfFooterColumn :title="$t('')"></SfFooterColumn>
+    <SfFooterColumn>
       <div class="footer__socials">
-        <SfImage
+        <a
+          :key="item.name"
+          :href="item.link"
           v-for="item in social"
-          :key="item"
-          class="footer__social-image"
-          :src="addBasePath('/icons/'+item+'.svg')"
-          :alt="item"
-          width="32"
-          height="32"
-        />
+          class="social-icon__link"
+        >
+          <SfImage
+            :key="item.name"
+            class="footer__social-image"
+            :src="addBasePath('/icons/'+item.name+'.svg')"
+            :alt="item.name"
+            width="32"
+            height="32"
+          />
+        </a>
       </div>
     </SfFooterColumn>
   </SfFooter>
@@ -89,11 +76,12 @@ export default defineComponent({
   },
   data() {
     return {
-      aboutUs: ['Who we are', 'Quality in the details', 'Customer Reviews'],
-      departments: ['Women fashion', 'Men fashion', 'Kidswear', 'Home'],
-      help: ['Customer service', 'Size guide', 'Contact us'],
-      paymentsDelivery: ['Purchase terms', 'Guarantee'],
-      social: ['facebook', 'pinterest', 'google', 'twitter', 'youtube'],
+      orders: [],
+      social: [
+        {name: 'facebook', link: 'https://www.facebook.com/enthrallrecords'},
+        {name: 'instagram', link: 'https://www.instagram.com/enthrallrecords'},
+        {name: 'youtube', link: 'https://www.youtube.com/c/Enthrallrecords/playlists'}
+      ],
       isMobile: false,
       desktopMin: 1024,
     };
@@ -120,7 +108,7 @@ export default defineComponent({
     }
   }
   &__social-image {
-    margin: 0 var(--spacer-2xs) 0 0;
+    margin: 0 var(--spacer-lg) 0 0;
     background-color: #fff;
     border-radius: 100%;
   }

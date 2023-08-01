@@ -10,7 +10,6 @@
     <LazyHydrate when-visible>
       <Notification />
     </LazyHydrate>
-    <TopBar class="desktop-only" />
     <AppHeader />
     <div id="layout">
       <nuxt :key="route.fullPath" />
@@ -29,7 +28,6 @@ import AppHeader from '~/components/AppHeader.vue';
 import BottomNavigation from '~/components/BottomNavigation.vue';
 import IconSprite from '~/components/General/IconSprite.vue';
 import LoadWhenVisible from '~/components/utils/LoadWhenVisible.vue';
-import TopBar from '~/components/TopBar/TopBar.vue';
 
 export default defineComponent({
   name: 'DefaultLayout',
@@ -40,7 +38,6 @@ export default defineComponent({
     AppHeader,
     BottomNavigation,
     IconSprite,
-    TopBar,
     AppFooter: () => import(/* webpackPrefetch: true */ '~/components/AppFooter.vue'),
     CartSidebar: () => import(/* webpackPrefetch: true */ '~/modules/checkout/components/CartSidebar.vue'),
     WishlistSidebar: () => import(/* webpackPrefetch: true */ '~/modules/wishlist/components/WishlistSidebar.vue'),
@@ -70,6 +67,7 @@ export default defineComponent({
 
 <style lang="scss">
 @import "~@storefront-ui/vue/styles";
+@import "/static/styles/_var.scss";
 
 #layout {
   box-sizing: border-box;
@@ -86,6 +84,7 @@ export default defineComponent({
 
 // Reset CSS
 html {
+  background-color: var(--bg-primary);
   width: auto;
   @include for-mobile {
     overflow-x: hidden;

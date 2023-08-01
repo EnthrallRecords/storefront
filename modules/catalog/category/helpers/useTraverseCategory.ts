@@ -21,6 +21,7 @@ export function useTraverseCategory() {
     const urlPathToFind = route.value.path
       .replace(context.app.localePath('/'), '')
       .replace(/^\//, '')
+      .replace('%2F', '/')
       .replace('.html', '');
 
     return categoryTree.value === null ? null : findActiveCategory(categoryTree.value, urlPathToFind);

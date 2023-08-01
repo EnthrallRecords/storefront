@@ -72,6 +72,7 @@
   }
 
   &__add-to-cart {
+    --quantity-selector-background: var(--bg-primary-lighten);
     margin: var(--spacer-base) var(--spacer-sm) 0;
     @include for-desktop {
       margin-top: var(--spacer-2xl);
@@ -197,6 +198,11 @@
     @include for-desktop {
       padding-top: 3.75rem;
       padding-bottom: 3.75rem;
+    }
+    ::v-deep {
+      .sf-image {
+        --image-height: auto;
+      }
     }
   }
 }

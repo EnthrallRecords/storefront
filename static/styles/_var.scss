@@ -1,0 +1,32 @@
+html {
+    --font-family--primary: "Raleway Dots", cursive;
+    --font-family--secondary: "Special Elite", serif;
+
+    @include generate-color-variants(--c-sunset, #EC4C4C);
+    @include generate-color-variants(--bg-primary, #3f4444);
+    @include generate-color-variants(--c-primary, #f38f04);
+
+    --bar-background: var(--bg-primary);
+    --sidebar-background: var(--bg-primary);
+    --bottom-navigation-background: var(--bg-primary);
+    --modal-background: var(--bg-primary);
+    --mega-menu-background: var(--bg-primary);
+    --product-card-background: var(--bg-primary);
+    --select-dropdown-background: var(--bg-primary);
+    --radio-background: var(--bg-primary);
+    --collected-product-image-background: var(--bg-primary);
+}
+
+body {
+    --c-body: var(--_c-dark-secondary);
+    --c-text: var(--_c-light-primary);
+    --c-text-muted: var(--_c-gray-secondary-lighten);
+    --c-text-disabled: var(--_c-gray-primary);
+    --c-highlight: var(--c-sunset);
+    strong { color: var(--_c-gray-accent); }
+    --c-link: var(--_c-light-secondary);
+    --link-color: var(--c-link);
+    --c-link-hover: var(--c-primary);
+    --input-label-color: var(--c-text);
+    --radio-label-color: var(--c-text);
+}

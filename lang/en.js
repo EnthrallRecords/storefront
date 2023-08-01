@@ -1,6 +1,7 @@
 /* eslint-disable  */
 
 export default {
+  "Enthrall Records": "Enthrall Records",
   "About us": "About us",
   "Account": "Account",
   "Add new address": "Add new address",
@@ -73,6 +74,7 @@ export default {
   "I agree to": "I agree to",
   "I confirm subscription": "I confirm subscription",
   "I want to create an account": "I want to create an account",
+  "Info": "Info",
   "Info after order": "You can log to your account using e-mail and password defined earlier. On your account you can edit your profile data, check history of transactions, edit subscription to newsletter.",
   "Instruction1": "Take care of me",
   "Instruction2": "Just here for the care instructions?",
@@ -117,7 +119,7 @@ export default {
   "Please type your current password to change your email address.": "Please type your current password to change your email address.",
   "Price": "Price",
   "Privacy": "Privacy",
-  "Privacy Policy": "Privacy Policy",
+  "privacy policy": "privacy policy",
   "Product": "Product",
   "Product suggestions": "Product suggestions",
   "Products": "Products",

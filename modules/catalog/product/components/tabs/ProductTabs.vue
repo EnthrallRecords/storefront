@@ -13,48 +13,6 @@
         class="product__description"
       />
     </SfTab>
-    <SfTab :title="$t('Read reviews')">
-      <SfLoader
-        v-if="isReviewsLoading"
-        :loading="isReviewsLoading"
-      />
-      <div v-else>
-        <SfReview
-          v-for="review in reviews"
-          :key="getReviewId(review)"
-          :author="getReviewAuthor(review)"
-          :date="getReviewDate(review)"
-          :message="getReviewMessage(review)"
-          :max-rating="5"
-          :rating="getReviewRating(review)"
-          :char-limit="250"
-          read-more-text="Read more"
-          hide-full-text="Read less"
-          class="product__review"
-        />
-        <div id="addReview">
-          <ProductAddReviewForm
-            @add-review="successAddReview"
-          />
-        </div>
-      </div>
-    </SfTab>
-    <SfTab
-      :title="$t('Additional Information')"
-      class="product__additional-info"
-    >
-      <div class="product__additional-info">
-        <p class="product__additional-info__title">
-          {{ $t('Instruction1') }}
-        </p>
-        <p class="product__additional-info__paragraph">
-          {{ $t('Instruction2') }}
-        </p>
-        <p class="product__additional-info__paragraph">
-          {{ $t('Instruction3') }}
-        </p>
-      </div>
-    </SfTab>
   </SfTabs>
 </template>
 <script lang="ts">

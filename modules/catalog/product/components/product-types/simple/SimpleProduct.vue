@@ -41,35 +41,7 @@
           :regular="$fc(productPrice)"
           :special="productSpecialPrice && $fc(productSpecialPrice)"
         />
-        <div>
-          <div class="product__rating">
-            <SfRating
-              :score="averageRating"
-              :max="5"
-            />
-            <a
-              v-if="!!totalReviews"
-              href="#"
-              class="product__count"
-            >
-              ({{ totalReviews }})
-            </a>
-          </div>
-          <SfButton
-            class="sf-button--text"
-            @click="setActiveTab(TabsConfig.reviews.ID)"
-          >
-            {{ $t('Read all reviews') }}
-          </SfButton>
-          |
-          <SfButton
-            class="sf-button--text"
-            @click="openNewReviewTab"
-          >
-            {{ $t('Add a review') }}
-          </SfButton>
-        </div>
-      </div>
+      </div>  
       <div v-if="product !== null ">
         <HTMLContent
           v-if="productShortDescription"

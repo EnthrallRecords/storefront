@@ -221,6 +221,7 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .sf-header {
+  --header-background: var(--bg-primary);
   --header-padding: var(--spacer-sm);
   @include for-desktop {
     --header-padding: 0 var(--spacer-sm);

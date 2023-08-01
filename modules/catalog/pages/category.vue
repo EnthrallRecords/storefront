@@ -18,27 +18,12 @@
       class="category-title"
     />
     <div class="category-layout">
-      <div class="sidebar column">
-        <CategoryFilters
-          v-if="isShowProducts"
-          class="mobile-only"
-          :is-visible="isFilterSidebarOpen"
-          :cat-uid="routeData.uid"
-          @close="toggleFilterSidebar"
-          @reloadProducts="onReloadProducts"
-        />
-      </div>
+
       <div
         ref="productContainerElement"
         class="main section column"
       >
-        <CategoryNavbar
-          v-if="isShowProducts"
-          :sort-by="sortBy"
-          :pagination="pagination"
-          :is-loading="$fetchState.pending"
-          @reloadProducts="onReloadProducts"
-        />
+
         <div class="products">
           <CategoryEmptyResults v-if="products.length === 0 && !$fetchState.pending && isShowProducts" />
 

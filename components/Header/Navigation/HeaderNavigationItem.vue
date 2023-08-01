@@ -42,8 +42,10 @@ export default defineComponent({
 </script>
 <style lang="scss">
 .sf-header-navigation-item__link {
+  --header-navigation-item-color: var(--c-light-variant);
   display: flex;
   .sf-icon {
+    --icon-color: var(--c-sunset);
     display: inline-flex;
     margin: 0 var(--spacer-xs);
   }

@@ -172,7 +172,12 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+.sf-header__search::v-deep input[type=search] {
+  border-bottom: white 1px solid;
+}
+
 .sf-search-bar__button {
+  color: var(--c-sunset);
   position: relative;
   right: 20px;
   bottom: 0;

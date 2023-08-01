@@ -143,7 +143,7 @@ export default async () => {
     i18n: {
       country: 'US',
       baseUrl: process.env.VSF_STORE_URL,
-      strategy: 'prefix',
+      strategy: 'prefix_except_default',
       locales: [
         {
           code: 'default',
@@ -283,8 +283,8 @@ export default async () => {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     baseConfig.build.plugins.push(new GoogleFontsPlugin({
       fonts: [
-        { family: 'Raleway', variants: ['300', '400', '500', '600', '700', '400italic'], display: 'swap' },
-        { family: 'Roboto', variants: ['300', '400', '500', '700', '300italic', '400italic'], display: 'swap' },
+        { family: 'Raleway Dots' },
+        { family: 'Special Elite' },
       ],
       name: 'fonts',
       filename: 'fonts.css',

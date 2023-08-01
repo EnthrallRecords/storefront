@@ -20,12 +20,6 @@
         <UpsellProducts />
       </LoadWhenVisible>
     </div>
-    <LoadWhenVisible>
-      <InstagramFeed />
-    </LoadWhenVisible>
-    <LoadWhenVisible>
-      <MobileStoreBanner />
-    </LoadWhenVisible>
   </div>
 </template>
 <script lang="ts">

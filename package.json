@@ -10,7 +10,7 @@
   },
   "scripts": {
     "dev": "concurrently \"nuxt\" \"yarn start:middleware\"",
-    "dev:debug": "node --inspect ../../node_modules/.bin/nuxt dev",
+    "dev:debug": "node --inspect ./node_modules/.bin/nuxt dev",
     "dev:frontend": "nuxt",
     "build": "nuxt build --modern=client",
     "build:analyze": "nuxt build -a --modern=client",

@@ -15,8 +15,8 @@
     <SvgImage
       v-else
       icon="logo"
-      :label="$t('Vue Storefront Next')"
-      width="35"
+      :label="$t('Enthrall Records')"
+      width="71"
       height="34"
     />
   </nuxt-link>
@@ -42,7 +42,7 @@ export default defineComponent({
     });
 
     const logoWidth = computed(
-      () => config.value.logo_width || '35',
+      () => config.value.logo_width || '71',
     );
 
     const logoHeight = computed(
